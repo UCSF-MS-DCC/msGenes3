@@ -1,0 +1,131 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.scss.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#welcome-banner-div {
+
+}
+#index-title-card {
+  background-image: url("ms-genetic-atlas.png");
+  min-height:400px;
+  height:auto;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-x: center;
+}
+#index-title-card-header {
+  top:150px;
+  font-family: sans-serif;
+  font-size:48pt;
+  font-weight:bold;
+  color:white;
+}
+.index-text {
+  margin-bottom:25vh;
+}
+#jobs-title-card {
+  background-image: url("jobs.png");
+  min-height:400px;
+  height:auto;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#jobs-title-card-header {
+  top:150px;
+  font-family: sans-serif;
+  font-size:48pt;
+  font-weight:bold;
+  color:white;
+}
+#jobs-disclaimer{
+}
+.btn-msgenes {
+  background-color: #052049;
+  color:white;
+  border-radius:15px;
+  padding:5px 10px;
+}
+.btn-msgenes:hover {
+  color:white;
+  text-decoration: underline;
+}
+.scroll-to-job-btn {
+  margin-left:35px;
+  margin-right:35px;
+}
+
+#publications-title-card {
+  background-image: url("papers.png");
+  min-height:400px;
+  height:auto;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#publications-title-card-header{
+  top:150px;
+  font-family: sans-serif;
+  font-size:48pt;
+  font-weight:bold;
+  color:white;
+}
+.pubmed-link:hover {
+  text-decoration: none;
+}
+
+.abstract-collapse-toggle {
+  font-size:10pt;
+}
+
+.card {
+  margin-bottom: 10px;
+}
+
+[data-toggle="collapse"] .fa:before {
+  content: "\2191";
+}
+
+[data-toggle="collapse"].collapsed .fa:before {
+  content: "\2193";
+}
+
+#research-title-card {
+  background-image: url("research.png");
+  min-height:400px;
+  height:auto;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#research-title-card-header{
+  top:150px;
+  font-family: sans-serif;
+  font-size:48pt;
+  font-weight:bold;
+  color:white;
+}
+#resource-links {
+  display: block;
+}
+.btn-resource {
+  padding:5px 10px;
+  background-color: #052049;
+  color:white;
+  border-radius:15px;
+  margin-left:25px;
+  margin-right:25px;
+}
+.btn-resource:hover {
+  color:white;
+  text-decoration: underline;
+}
+#team-title-card {
+  background-image: url("team-retreat.png");
+  min-height:400px;
+  height:auto;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.portrait-placeholder {
+  display:block;
+  margin-left:auto;
+  margin-right:auto;
+}

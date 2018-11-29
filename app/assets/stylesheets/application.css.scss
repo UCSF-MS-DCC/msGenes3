@@ -1,0 +1,135 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+@import 'bootstrap';
+
+body {
+  //font-family: Raleway;
+  min-height: 100vh;
+}
+
+#top-row {
+  background-color: #052049;
+  min-height: 36px;
+}
+
+#top-row {
+  padding-top:3px;
+}
+
+#header-container > #top-row > .top-row-col > a {
+  color:white;
+  padding-right:15px;
+  font-size:9pt;
+}
+
+#msgrl {
+  font-size:20pt;
+}
+
+.navbar-brand {
+  font-size:20pt;
+}
+
+.navbar-item {
+  border-radius:5px;
+}
+
+.navbar-item-active {
+  //background-color: #CCCCCC;
+  border-bottom:1px solid #666666;
+  border-right:1px solid #666666;
+}
+.navbar-item-active > .nav-link {
+  font-weight:bold;
+}
+
+.nav-menu-item {
+  font-size:12pt;
+  margin-left:12px;
+  margin-right:12px;
+}
+
+.nav-menu-item:hover {
+  text-decoration: underline;
+}
+
+#footer-container {
+  margin-top:100px;
+  min-height:100px;
+  background-color: #052049;
+}
+
+#footer-content {
+  margin-top:25px;
+}
+.footer-link {
+  color:white;
+}
+.footer-link:hover {
+  color:white;
+  text-decoration:underline;
+}
+.loader {
+  border: 16px solid #f3f3f3; /* Light grey */
+  border-top: 16px solid rebeccapurple; /* Blue */
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+  margin-left:auto;
+  margin-right:auto;
+  margin-top:100px;
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+@-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+
+.access-denied {
+  font-size:80pt;
+  margin-top:50px;
+  opacity:0;  /* make things invisible upon start */
+  -webkit-animation:fadeIn ease-in 1;  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+  -moz-animation:fadeIn ease-in 1;
+  animation:fadeIn ease-in 1;
+    -webkit-animation-delay: 2.0s;
+    -moz-animation-delay: 2.0s;
+    animation-delay: 2.0s;
+  -webkit-animation-fill-mode:forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+  -moz-animation-fill-mode:forwards;
+  animation-fill-mode:forwards;
+
+  -webkit-animation-duration:3s;
+  -moz-animation-duration:3s;
+  animation-duration:3s;
+}
+.robot {
+  min-width: 50%;
+  min-height: 300px;
+  background-image: url("404-broken-robot-2.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-top:150px;
+  margin-bottom:40vh;
+}
+//.fade-in.one {
+//  -webkit-animation-delay: 0.7s;
+//  -moz-animation-delay: 0.7s;
+//  animation-delay: 0.7s;
+//}
