@@ -6,5 +6,6 @@ Rails.application.routes.draw do
   get '/research', to: 'home#research', as: 'research'
   get '/publications', to: 'home#publications', as: 'publications'
   get '/jobs', to: 'home#jobs', as: 'jobs'
-  get '*path', to: 'error#error_404', via: :all
+  get '/redcap', to: 'home#redcap', as: 'redcap'
+  get '*path', to: 'error#error_404', via: :all, as: 'error'
 end

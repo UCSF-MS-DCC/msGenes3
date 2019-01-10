@@ -31,6 +31,7 @@ gem 'bootstrap', '~> 4.1.1'
 gem 'rails_admin', '~> 1.3'
 gem 'devise'
 gem 'pg', '1.0.0', group: :production
+gem 'httparty'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
@@ -52,6 +53,11 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'capistrano'
+  gem 'capistrano-rvm'
+  gem 'capistrano-rails'
+  gem 'capistrano-passenger'
+  gem 'capistrano3-puma'
 end
 
 group :test do

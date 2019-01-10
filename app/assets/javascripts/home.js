@@ -41,5 +41,18 @@ $(document).on('turbolinks:load', function(){
         }, 1000);
     });
 
+    if (window.location.pathname === '/redcap') {
+        $.post('https://redcap.ucsf.edu/api/',
+                { token:'',
+                format: 'json',
+                content: 'record',
+                type: 'flat',
+                returnFormat: 'json' },
+                function(data){
+            console.log(data.length);
+            $('.spinner').css("display", "none");
+
+        })
+    }
 });
 
