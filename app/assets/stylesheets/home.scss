@@ -24,7 +24,7 @@
   margin-bottom:25vh;
 }
 #jobs-title-card {
-  background-image: url("jobs.png");
+  background-image: image_url("jobs.png");
   min-height:400px;
   height:auto;
   background-repeat: no-repeat;
@@ -55,7 +55,7 @@
 }
 
 #publications-title-card {
-  background-image: url("papers.png");
+  background-image: image_url("papers.png");
   min-height:400px;
   height:auto;
   background-repeat: no-repeat;
@@ -89,7 +89,7 @@
 }
 
 #research-title-card {
-  background-image: url("research.png");
+  background-image: image_url("research.png");
   min-height:400px;
   height:auto;
   background-repeat: no-repeat;
@@ -118,7 +118,7 @@
   text-decoration: underline;
 }
 #team-title-card {
-  background-image: url("team-retreat.png");
+  background-image: image_url("team-retreat.png");
   min-height:400px;
   height:auto;
   background-repeat: no-repeat;
