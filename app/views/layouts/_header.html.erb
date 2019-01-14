@@ -36,6 +36,11 @@
         <li class=<% if params[:controller] == 'home' && params[:action] == 'jobs' %>"navbar-item navbar-item-active"<% else %>"navbar-item"<% end %> >
           <%= link_to "Join Us", jobs_path, :class => "nav-link nav-nav-link nav-menu-item" %>
         </li>
+        <% if current_user %>
+          <li class="navbar-item">
+            <%= link_to "Admin", rails_admin_path, :class => "nav-link nav-nav-link nav-menu-item" %>
+          </li>
+        <% end %>
       </ul>
     </div>
 
