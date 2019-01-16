@@ -4,40 +4,53 @@
   </div>
   <hr>
   <br>
-  <div class="row">
-    <div class="col-lg-12 text-center">
-      <% @jobs.all.each_with_index do |job, idx| %>
-        <%= link_to "#{job[:job_title]}", nil ,  :class => "scroll-to-job-btn btn-msgenes", :'data-tar' => "job#{idx}" %>
-      <% end %>
-    </div>
-  </div>
 
-  <br><br>
-<% @jobs.each_with_index do |job, idx| %>
-  <div class="row">
-    <div class="col-lg-10 offset-lg-1" id=<%= "job#{idx}" %>>
-      <h1><%= job[:job_title] %></h1>
-      contact: <%= link_to "#{job[:contact_email]}", "mailto:#{job[:contact_email]}" %>
-      <br><br>
-      <p>
-        <%= job[:job_description] %>
-      </p>
-      <hr>
+  <% if @jobs.count > 0 %>
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <% @jobs.all.each_with_index do |job, idx| %>
+          <%= link_to "#{job[:job_title]}", nil ,  :class => "scroll-to-job-btn btn-msgenes", :'data-tar' => "job#{idx}" %>
+        <% end %>
+      </div>
     </div>
-  </div>
 
-<% end %>
-
-  <div class="row">
-    <div class="col-lg-8 offset-lg-2">
-      <hr>
+    <br><br>
+  <% @jobs.each_with_index do |job, idx| %>
+    <div class="row">
+      <div class="col-lg-10 offset-lg-1" id=<%= "job#{idx}" %>>
+        <h1><%= job[:job_title] %></h1>
+        contact: <%= link_to "#{job[:contact_email]}", "mailto:#{job[:contact_email]}" %>
+        <br><br>
+        <p>
+          <%= job[:job_description] %>
+        </p>
+        <hr>
+      </div>
     </div>
-  </div>
+
+  <% end %>
+
+    <div class="row">
+      <div class="col-lg-8 offset-lg-2">
+        <hr>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-10 offset-lg-1">
+        <h5 id="jobs-disclaimer" class="text-center">UCSF is an equal opportunity/affirmative action employer. All qualified candidates are encouraged to apply.</h5>
+      </div>
+    </div>
+
+  <% else %>
 
   <div class="row">
     <div class="col-lg-10 offset-lg-1">
-      <h5 id="jobs-disclaimer" class="text-center">UCSF is an equal opportunity/affirmative action employer. All qualified candidates are encouraged to apply.</h5>
+      <br>
+      <h3>No positions open at this time</h3>
+      <br>
     </div>
   </div>
 
+  <% end %>
 </div>
