@@ -15,32 +15,32 @@
     </div>
 
     <br><br>
-  <% @jobs.each_with_index do |job, idx| %>
-    <div class="row">
-      <div class="col-lg-10 offset-lg-1" id=<%= "job#{idx}" %>>
-        <h1><%= job[:job_title] %></h1>
-        contact: <%= link_to "#{job[:contact_email]}", "mailto:#{job[:contact_email]}" %>
-        <br><br>
-        <p>
-          <%= job[:job_description] %>
-        </p>
-        <hr>
+    <% @jobs.each_with_index do |job, idx| %>
+      <div class="row">
+        <div class="col-lg-10 offset-lg-1" id=<%= "job#{idx}" %>>
+          <h1><%= job[:job_title] %></h1>
+          contact: <%= link_to "#{job[:contact_email]}", "mailto:#{job[:contact_email]}" %>
+          <br><br>
+          <p>
+            <%= job[:job_description] %>
+          </p>
+          <hr>
+        </div>
       </div>
-    </div>
 
-  <% end %>
+    <% end %>
 
-    <div class="row">
-      <div class="col-lg-8 offset-lg-2">
-        <hr>
+      <div class="row">
+        <div class="col-lg-8 offset-lg-2">
+          <hr>
+        </div>
       </div>
-    </div>
 
-    <div class="row">
-      <div class="col-lg-10 offset-lg-1">
-        <h5 id="jobs-disclaimer" class="text-center">UCSF is an equal opportunity/affirmative action employer. All qualified candidates are encouraged to apply.</h5>
+      <div class="row">
+        <div class="col-lg-10 offset-lg-1">
+          <h5 id="jobs-disclaimer" class="text-center">UCSF is an equal opportunity/affirmative action employer. All qualified candidates are encouraged to apply.</h5>
+        </div>
       </div>
-    </div>
 
   <% else %>
 
