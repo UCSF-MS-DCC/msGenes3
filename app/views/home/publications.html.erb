@@ -5,41 +5,33 @@
   <hr>
   <% @papers.each_with_index  do |paper, idx| %>
 
-    <% if idx == 0 || (idx > 0 && paper[:pubdate] < @papers[idx-1][:pubdate]) %>
-      <div class="row">
-        <div class="col-lg-6 offset-lg-3">
-          <h4 class="text-center"><%= paper[:pubdate] %></h4>
-          <hr>
-        </div>
-      </div>
-    <% end %>
-      <div class="row">
-        <div class="col-lg-8 offset-lg-2">
-          <h5><%= paper[:title] %>
-            <% if paper[:synopsis].length > 1 %>
-              <span>
-                <a class="abstract-collapse-toggle" id=<%= "abstract#{idx}-collapse-toggle" %> data-toggle="collapse" href=<%= "#abstract#{idx}" %>>
-                  <span id=<%= "abstract#{idx}-collapse-toggle-prefix" %> class="abstract-toggle-action" ></span>abstract
-                </a>
-              </span>
-            <% end %>
-          </h5>
+    <div class="row">
+      <div class="col-lg-8 offset-lg-2">
+        <h5><%= paper[:title] %>
           <% if paper[:synopsis].length > 1 %>
-            <div class="collapse" id=<%= "abstract#{idx}" %> >
-              <div class="card card-body">
-                <%= paper[:synopsis] %>
-              </div>
-            </div>
+            <span>
+              <a class="abstract-collapse-toggle" id=<%= "abstract#{idx}-collapse-toggle" %> data-toggle="collapse" href=<%= "#abstract#{idx}" %>>
+                <span id=<%= "abstract#{idx}-collapse-toggle-prefix" %> class="abstract-toggle-action" ></span>abstract
+              </a>
+            </span>
           <% end %>
-          by: <%= paper[:author] %>
-          <br>
-          <%= paper[:publication] %>
-          <br>
-          <%= link_to "PMID: #{paper[:pmid]}", "http://www.ncbi.nlm.nih.gov/pubmed/#{paper[:pmid]}", target: :blank, :class => "pubmed-link"  %>
-          <br>
+        </h5>
+        <% if paper[:synopsis].length > 1 %>
+          <div class="collapse" id=<%= "abstract#{idx}" %> >
+            <div class="card card-body">
+              <%= paper[:synopsis] %>
+            </div>
+          </div>
+        <% end %>
+        by: <%= paper[:author] %>
+        <br>
+        <%= paper[:publication] %>
+        <br>
+        <%= link_to "PMID: #{paper[:pmid]}", "http://www.ncbi.nlm.nih.gov/pubmed/#{paper[:pmid]}", target: :blank, :class => "pubmed-link"  %>
+        <br>
 
-        </div>
       </div>
+    </div>
     <br>
 
   <% end %>
