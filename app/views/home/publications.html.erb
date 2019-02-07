@@ -9,6 +9,7 @@
       <div class="col-lg-8 offset-lg-2">
         <h5><%= paper[:title] %>
           <% if paper[:synopsis].length > 1 %>
+            <br>
             <span>
               <a class="abstract-collapse-toggle" id=<%= "abstract#{idx}-collapse-toggle" %> data-toggle="collapse" href=<%= "#abstract#{idx}" %>>
                 <span id=<%= "abstract#{idx}-collapse-toggle-prefix" %> class="abstract-toggle-action" ></span>abstract
@@ -29,7 +30,7 @@
         <br>
         <%= link_to "PMID: #{paper[:pmid]}", "http://www.ncbi.nlm.nih.gov/pubmed/#{paper[:pmid]}", target: :blank, :class => "pubmed-link"  %>
         <br>
-
+        <hr>
       </div>
     </div>
     <br>
