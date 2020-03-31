@@ -48,9 +48,11 @@ body {
 }
 
 .navbar-item-active {
-  //background-color: #CCCCCC;
-  border-bottom:1px solid #666666;
-  border-right:1px solid #666666;
+  //background-color: #e8eef4;
+  border-bottom:2px solid #666666;
+  border-right:2px solid #666666;
+  border-top:1px solid #666666;
+  border-left:1px solid #666666;
 }
 .navbar-item-active > .nav-link {
   font-weight:bold;
