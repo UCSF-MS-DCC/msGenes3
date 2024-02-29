@@ -4,7 +4,7 @@ lock "~> 3.17.2"
 
 server '169.230.177.100', port: 22, roles: [:web, :app, :db], primary: true
 
-set :repo_url,        'https://github.com/UCSF-MS-DCC/msGenes2'
+set :repo_url,        'https://github.com/UCSF-MS-DCC/msGenes3'
 set :application,     'ms_genes'
 set :user,            'deployment'
 set :puma_threads,    [4, 16]
