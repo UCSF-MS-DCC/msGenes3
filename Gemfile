@@ -30,7 +30,8 @@ gem 'jquery-rails'
 gem 'bootstrap', '~> 4.1.1'
 gem 'rails_admin'
 gem 'devise'
-gem 'pg', '~> 1.4', group: :production
+# gem 'pg', '~>1.1', group: :production
+gem 'mysql2'
 gem 'httparty'
 gem 'listen', '>= 3.0.5', '< 3.2'
 # Use ActiveStorage variant

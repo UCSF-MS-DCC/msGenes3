@@ -24,7 +24,7 @@ class HomeController < ApplicationController
     #   redirect_to '/error#error_404'
     # end
     @api_params = { token: ENV[:REDCAP_TOKEN], :format => 'json', :content => 'record', :type => 'flat', :returnFormat => 'json' }
-    @url = 'https://redcap.ucsf.edu/api/'
+    @url = ''
     # @api_results = HTTParty.post(@url, :body => @api_params)
     # puts @api_results.first
   end
