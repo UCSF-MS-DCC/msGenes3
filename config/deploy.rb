@@ -3,8 +3,9 @@ lock "~> 3.17.2"
 
 
 server '169.230.177.100', port: 22, roles: [:web, :app, :db], primary: true
-
 set :repo_url,        'https://github.com/UCSF-MS-DCC/msGenes3'
+set :git_http_username, 'urrik98'
+set :git_http_password, fetch((:github_token))
 set :application,     'ms_genes'
 set :user,            'deployment'
 set :puma_threads,    [4, 16]

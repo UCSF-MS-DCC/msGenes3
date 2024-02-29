@@ -1,0 +1,26 @@
+.//config/environments/production.rb:  config.assets.js_compressor = :uglifier
+.//Gemfile:# Use Uglifier as compressor for JavaScript assets
+.//Gemfile:gem 'uglifier', '>= 1.3.0'
+.//log/capistrano.log: DEBUG [49e50588] 	[31m * uglifier (4.2.0)[0m
+.//log/capistrano.log: DEBUG [235e7fbb] 	Uglifier::Error: Unexpected token: keyword (const). To use ES6 syntax, harmony mode must be enabled with Uglifier.new(:harmony => true).
+.//log/capistrano.log: DEBUG [235e7fbb] 	/var/www/ms_genes/shared/bundle/ruby/3.0.0/gems/uglifier-4.2.0/lib/uglifier.rb:291:in `parse_result'
+.//log/capistrano.log:/var/www/ms_genes/shared/bundle/ruby/3.0.0/gems/uglifier-4.2.0/lib/uglifier.rb:221:in `run_uglifyjs'
+.//log/capistrano.log:/var/www/ms_genes/shared/bundle/ruby/3.0.0/gems/uglifier-4.2.0/lib/uglifier.rb:166:in `compile'
+.//log/capistrano.log:/var/www/ms_genes/shared/bundle/ruby/3.0.0/gems/sprockets-3.7.2/lib/sprockets/uglifier_compressor.rb:53:in `call'
+.//log/capistrano.log:/var/www/ms_genes/shared/bundle/ruby/3.0.0/gems/sprockets-3.7.2/lib/sprockets/uglifier_compressor.rb:28:in `call'
+.//Gemfile.lock:    uglifier (4.2.0)
+.//Gemfile.lock:  uglifier (>= 1.3.0)
+Binary file .//tmp/cache/bootsnap/load-path-cache matches
+Binary file .//tmp/cache/bootsnap/compile-cache-iseq/92/68f9d7eaa87daa matches
+Binary file .//tmp/cache/bootsnap/compile-cache-iseq/fb/f64e917fb08872 matches
+Binary file .//tmp/cache/bootsnap/compile-cache-iseq/4b/e3f31f85b481a4 matches
+Binary file .//tmp/cache/bootsnap/compile-cache-iseq/09/e763b5485e77dc matches
+Binary file .//tmp/cache/bootsnap/compile-cache-iseq/62/0b9a09899286f1 matches
+Binary file .//tmp/cache/bootsnap/compile-cache-iseq/b7/de1b6c53195ab8 matches
+Binary file .//tmp/cache/bootsnap/compile-cache-iseq/cd/e4873da7c96e92 matches
+Binary file .//tmp/cache/bootsnap/compile-cache-iseq/c5/dbe2a52b2fa5dc matches
+Binary file .//tmp/cache/bootsnap/compile-cache-iseq/41/8ef2a729ff204b matches
+Binary file .//tmp/cache/bootsnap/compile-cache-iseq/77/1f9ac71978f8ee matches
+Binary file .//tmp/cache/bootsnap/compile-cache-iseq/1e/8d1cd07c09fb09 matches
+Binary file .//tmp/cache/bootsnap/compile-cache-iseq/85/580568c186d2b7 matches
+.//.idea/msgenes.iml:    <orderEntry type="library" scope="PROVIDED" name="uglifier (v4.2.0, rbenv: 3.0.4) [gem]" level="application" />
