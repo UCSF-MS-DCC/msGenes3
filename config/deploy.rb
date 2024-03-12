@@ -7,8 +7,8 @@ set :repo_url,        'https://github.com/UCSF-MS-DCC/msGenes3'
 set :application,     'ms_genes'
 set :user,            'deployment'
 set :git_http_username, 'urrik98'
-ask(:github_token, "github_token", echo: false)
-set :git_http_password, fetch((:github_token))
+#ask(:github_token, "github_token", echo: false)
+#set :git_http_password, fetch((:github_token))
 set :puma_threads,    [4, 16]
 set :puma_workers,    0
 
