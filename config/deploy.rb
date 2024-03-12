@@ -4,10 +4,11 @@ lock "~> 3.17.2"
 
 server '169.230.177.100', port: 22, roles: [:web, :app, :db], primary: true
 set :repo_url,        'https://github.com/UCSF-MS-DCC/msGenes3'
-set :git_http_username, 'urrik98'
-set :git_http_password, fetch((:github_token))
 set :application,     'ms_genes'
 set :user,            'deployment'
+set :git_http_username, 'urrik98'
+ask(:github_token, "github_token", echo: false)
+set :git_http_password, fetch((:github_token))
 set :puma_threads,    [4, 16]
 set :puma_workers,    0
 
@@ -22,7 +23,7 @@ set :puma_state,      "#{shared_path}/tmp/pids/puma.state"
 set :puma_pid,        "#{shared_path}/tmp/pids/puma.pid"
 set :puma_access_log, "#{release_path}/log/puma.access.log"
 set :puma_error_log,  "#{release_path}/log/puma.error.log"
-set :ssh_options,     { forward_agent: true, user: fetch(:user), keys: %w(~/.ssh/id_rsa.pub) }
+set :ssh_options,     { forward_agent: true, user: fetch(:user), keys: %w(~/.ssh/authorized_keys) } #, keys: %w(~/.ssh/msgenes.pub)
 set :puma_preload_app, true
 set :puma_worker_timeout, nil
 set :puma_init_active_record, true  # Change to false when not using ActiveRecord
@@ -55,8 +56,8 @@ namespace :deploy do
   desc "Make sure local git is in sync with remote."
   task :check_revision do
     on roles(:app) do
-      unless `git rev-parse HEAD` == `git rev-parse origin/master`
-        puts "WARNING: HEAD is not the same as origin/master"
+      unless `git rev-parse HEAD` == `git rev-parse origin/main`
+        puts "WARNING: HEAD is not the same as origin/main"
         puts "Run `git push` to sync changes."
         exit
       end
