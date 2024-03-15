@@ -7,8 +7,10 @@ set :repo_url,        'https://github.com/UCSF-MS-DCC/msGenes3'
 set :application,     'ms_genes'
 set :user,            'deployment'
 set :git_http_username, 'urrik98'
+
 #ask(:github_token, "github_token", echo: false)
 #set :git_http_password, fetch((:github_token))
+
 set :puma_threads,    [4, 16]
 set :puma_workers,    0
 
@@ -27,13 +29,13 @@ set :ssh_options,     { forward_agent: true, user: fetch(:user), keys: %w(~/.ssh
 set :puma_preload_app, true
 set :puma_worker_timeout, nil
 set :puma_init_active_record, true  # Change to false when not using ActiveRecord
-set :console_user, :deployment
+set :console_user, :msgenes
 set :rbenv_ruby, '3.0.4'
 ## Defaults:
-# set :scm,           :git
+set :scm,           :git
 # set :branch,        :master
 # set :format,        :pretty
-# set :log_level,     :debug
+set :log_level,     :debug
 set :keep_releases, 5
 set :linked_files, %w(config/master.key)
 ## Linked Files & Directories (Default None):
@@ -53,6 +55,16 @@ namespace :puma do
 end
 
 namespace :deploy do
+  desc "Check if agent forwarding is working"
+  task :forwarding do
+    on roles(:all) do |h|
+      if test("env | grep SSH_AUTH_SOCK")
+        info "Agent forwarding is up to #{h}"
+      else
+        error "Agent forwarding is NOT up to #{h}"
+      end
+    end
+  end
   desc "Make sure local git is in sync with remote."
   task :check_revision do
     on roles(:app) do
