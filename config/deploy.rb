@@ -1,15 +1,13 @@
 # config valid for current version and patch releases of Capistrano
-lock "~> 3.17.2"
+lock "~> 3.18.1"
 
 
 server '169.230.177.100', port: 22, roles: [:web, :app, :db], primary: true
-set :repo_url,        'https://github.com/UCSF-MS-DCC/msGenes3'
+#set :repo_url,        'ssh://git@github.com:UCSF-MS-DCC/msGenes3.git' #'https://github.com/UCSF-MS-DCC/msGenes3'
+set :repo_url,        'ssh://git@github.com:UCSF-MS-DCC/msGenes3.git'
 set :application,     'ms_genes'
 set :user,            'deployment'
 set :git_http_username, 'urrik98'
-
-#ask(:github_token, "github_token", echo: false)
-#set :git_http_password, fetch((:github_token))
 
 set :puma_threads,    [4, 16]
 set :puma_workers,    0
@@ -18,22 +16,22 @@ set :puma_workers,    0
 set :pty,             true
 set :use_sudo,        false
 set :stage,           :production
-set :deploy_via,      :remote_cache
+#set :deploy_via,      :remote_cache
 set :deploy_to,       "/var/www/#{fetch(:application)}"
 set :puma_bind,       "unix://#{shared_path}/tmp/sockets/msgenes-puma.sock"
 set :puma_state,      "#{shared_path}/tmp/pids/puma.state"
 set :puma_pid,        "#{shared_path}/tmp/pids/puma.pid"
 set :puma_access_log, "#{release_path}/log/puma.access.log"
 set :puma_error_log,  "#{release_path}/log/puma.error.log"
-set :ssh_options,     { forward_agent: true, user: fetch(:user), keys: %w(~/.ssh/authorized_keys) } #, keys: %w(~/.ssh/msgenes.pub)
+set :ssh_options,     { forward_agent: true, user: fetch(:user), auth_methods: ['publickey'], keys: %w(/Users/arenschen/.ssh/msgenes_deploy) }
 set :puma_preload_app, true
 set :puma_worker_timeout, nil
 set :puma_init_active_record, true  # Change to false when not using ActiveRecord
 set :console_user, :msgenes
 set :rbenv_ruby, '3.0.4'
 ## Defaults:
-set :scm,           :git
-# set :branch,        :master
+# set :scm,           :git
+set :branch,        :main
 # set :format,        :pretty
 set :log_level,     :debug
 set :keep_releases, 5
