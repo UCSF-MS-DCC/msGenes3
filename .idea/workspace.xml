@@ -7,10 +7,8 @@
     <list default="true" id="56797823-d89b-431e-95f6-c9ec5a1d57e8" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/msgenes.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/msgenes.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/database.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config/database.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/deploy.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/deploy.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/environments/production.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/environments/production.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/schema.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.ruby-version" beforeDir="false" afterPath="$PROJECT_DIR$/.ruby-version" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,6 +76,10 @@
       <workItem from="1697151573416" duration="598000" />
       <workItem from="1698698727715" duration="635000" />
       <workItem from="1709158098103" duration="11020000" />
+      <workItem from="1710264636280" duration="23594000" />
+      <workItem from="1712253566070" duration="1828000" />
+      <workItem from="1714697612849" duration="594000" />
+      <workItem from="1715813766326" duration="10538000" />
     </task>
     <servers />
   </component>
