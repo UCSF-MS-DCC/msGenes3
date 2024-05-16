@@ -36,6 +36,7 @@
   font-size:48pt;
   font-weight:bold;
   color:white;
+  -webkit-text-stroke: 1px black;
 }
 #jobs-disclaimer{
 }
@@ -55,10 +56,9 @@
 }
 
 #publications-title-card {
-  background-image: image_url("library-journals.jpeg");
-  min-height:400px;
-  height:auto;
-  background-repeat: no-repeat;
+  background-image: image_url("publications_banner.jpg");
+  background-position: center;
+  min-height:500px;
   background-size: cover;
 }
 #publications-title-card-header{
@@ -67,6 +67,7 @@
   font-size:48pt;
   font-weight:bold;
   color:white;
+  -webkit-text-stroke: 1px black;
 }
 .pubmed-link:hover {
   text-decoration: none;
@@ -101,6 +102,7 @@
   font-size:48pt;
   font-weight:bold;
   color:white;
+  -webkit-text-stroke: 1px black;
 }
 #resource-links {
   display: block;
@@ -130,6 +132,7 @@
   font-size:48pt;
   font-weight:bold;
   color:white;
+  -webkit-text-stroke: 1px black;
 }
 .portrait-placeholder {
   display:block;
