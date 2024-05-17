@@ -3,11 +3,12 @@ lock "~> 3.18.1"
 
 
 server '169.230.177.100', port: 22, roles: [:web, :app, :db], primary: true
-#set :repo_url,        'ssh://git@github.com:UCSF-MS-DCC/msGenes3.git' #'https://github.com/UCSF-MS-DCC/msGenes3'
-set :repo_url,        'ssh://git@github.com:UCSF-MS-DCC/msGenes3.git'
+set :repo_url,        'https://github.com/UCSF-MS-DCC/msGenes3.git'
+#set :repo_url,        'ssh://git@github.com:UCSF-MS-DCC/msGenes3.git'
 set :application,     'ms_genes'
 set :user,            'deployment'
 set :git_http_username, 'urrik98'
+set :environment_variables, { 'RUBY_VERSION' => '2.5.1' }
 
 set :puma_threads,    [4, 16]
 set :puma_workers,    0
@@ -28,7 +29,7 @@ set :puma_preload_app, true
 set :puma_worker_timeout, nil
 set :puma_init_active_record, true  # Change to false when not using ActiveRecord
 set :console_user, :msgenes
-set :rbenv_ruby, '3.0.4'
+#set :ruby_version, '2.5.1'
 ## Defaults:
 # set :scm,           :git
 set :branch,        :main
@@ -39,6 +40,7 @@ set :linked_files, %w(config/master.key)
 ## Linked Files & Directories (Default None):
 #set :linked_files, %w{config/database.yml}
 set :linked_dirs,  %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
+
 
 namespace :puma do
   desc 'Create Directories for Puma Pids and Socket'
@@ -92,6 +94,11 @@ namespace :deploy do
   before :starting,     :check_revision
   after  :finishing,    :compile_assets
   after  :finishing,    :cleanup
+  after "deploy", "print_env_vars" do
+    puts "GEM_PATH: #{ENV['GEM_PATH'].join(', ')}"
+    puts "BUNDLE_GEMFILE: #{ENV['BUNDLE_GEMFILE']}"
+  end
+
   # after  :finishing,    :restart
 end
 
