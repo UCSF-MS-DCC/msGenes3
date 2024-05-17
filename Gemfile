@@ -60,7 +60,7 @@ group :development do
   gem 'capistrano-rbenv'
   gem 'capistrano-rails'
   gem 'capistrano-passenger'
-  gem 'capistrano3-puma'
+  gem 'capistrano3-puma', '~> 4.0.0'
   gem 'capistrano-ssh-doctor', '~> 1.0'
 end
 
